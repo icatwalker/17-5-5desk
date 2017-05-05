@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{height:8000px;}
+    </style>
+</head>
+<body>
+<div class="div">
+    <div>
+        <button class="btn1">100多</button>
+        <button class="btn2">开个窗口</button>
+
+    </div>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".btn1").click(function(){
+            num=0;
+            setInterval(function(){
+                $(window).scrollTop(num+=50);
+                if(num==1000){num=0}
+                console.log($(window).scrollTop());
+            },200);
+        });
+        $(".btn2").click(function(){
+            window.open();
+        });
+
+});
+window.pageXOffset=100;
+window.pageYOffset=100;
+
+    console.log(  "length:"+window.length);
+    console.log("-outerheight:"+window.outerHeight);
+    console.log("-outerwidth:"+window.outerWidth);
+    console.log( "-pageXOffset:"+window.pageXOffset);
+    console.log("-pageYOffset:"+window.pageYOffset);
+    console.log("-screen:"+window.screen);
+    console.log("-top:"+window.top);
+    console.log("-screenLeft:"+window.screenLeft);
+    console.log("-screenTop:"+window.screenTop);
+    console.log("-screenX:"+window.screenX);
+    console.log("-screenY:"+window.screenY);
+
+</script>
+
+</body>
+</html>
